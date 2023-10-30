@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cor1: #222535;
+  --cor2: #2D3045;
+  --cor3: #373A63;
+  --font-color: #8080b0;
+  --font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: var(--cor1);
+  min-height: 100vh;
+  min-width: 320px;
+}
+
+h1 {
+  color: var(--font-color);
+  font-family: var(--font-family);
+}
