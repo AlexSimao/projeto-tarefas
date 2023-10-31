@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import InputText from "./componentes/InputText";
+import Lista from "./componentes/Lista";
 
 function App() {
   return (
