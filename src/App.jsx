@@ -1,15 +1,15 @@
 import { useState } from "react";
 import "./App.css";
+import Item from "./componentes/Item";
 
 function App() {
   const [inputText, setInputText] = useState("");
-  const lista_de_tarefas = []
+  const lista_de_tarefas = [];
 
   function btnAdd() {
-    if (lista_de_tarefas == []) {
-      return
+    if (inputText == "") {
+      return;
     }
-
   }
 
   return (
@@ -29,14 +29,8 @@ function App() {
       </form>
 
       <div className="lista">
-        <div className="item">
-          <span>Tarefa Exemplo</span>
-          <button>Excluir</button>
-        </div>
-        <div className="item completo">
-          <span>Tarefa Exemplo</span>
-          <button>Excluir</button>
-        </div>
+        <Item />
+        <Item />
       </div>
     </div>
   );
