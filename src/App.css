@@ -15,6 +15,7 @@ button {
   --cor1: #222535;
   --cor2: #2D3045;
   --cor3: #373A63;
+  --cor4: #ff004c;
   --font-color: #8080b0;
   --font-family: "Roboto", sans-serif;
 }
@@ -113,6 +114,11 @@ body {
   color: #fff;
 }
 
+.item:hover {
+  background-color: var(--cor2);
+  box-shadow: none;
+}
+
 .item.completo span {
   color: darkgray;
   text-decoration: line-through;
@@ -125,14 +131,30 @@ body {
 
   border: none;
   background-color: var(--cor3);
-  color: #fff;
 
+  color: #ffffff5b;
   font-weight: bold;
 }
 
 .item button:hover {
-  color: red;
-  border: 2px solid red;
+  color: var(--cor4);
+  border: 2px solid var(--cor4);
+}
+
+.btn-remove-all {
+  height: 50px;
+  width: 80px;
+
+  background-color: var(--cor3);
+  border: 2px solid var(--cor4);
+
+  color: var(--cor4);
+  font-size: small;
+  font-weight: bold;
+}
+
+.btn-remove-all:hover {
+  background-color: var(--cor2);
 }
 
 @media (min-width: 800px) {
@@ -142,5 +164,10 @@ body {
 
   .item {
     width: 700px;
+  }
+
+  .btn-remove-all {
+    width: 140px;
+    font-size: medium;
   }
 }

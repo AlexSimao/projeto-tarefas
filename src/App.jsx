@@ -4,7 +4,7 @@ import Item from "./componentes/Item";
 
 function App() {
   const [inputText, setInputText] = useState("");
-  const lista_de_tarefas = [];
+  const [lista, setLista] = useState([]);
 
   function btnAdd() {
     if (inputText == "") {
@@ -23,7 +23,7 @@ function App() {
             setInputText(e.target.value);
           }}
           type="text"
-          placeholder="Adicione uma terefa"
+          placeholder="Adicione uma tarefa"
         />
         <button onClick={() => btnAdd()}>Add</button>
       </form>
@@ -31,6 +31,7 @@ function App() {
       <div className="lista">
         <Item />
         <Item />
+        <button className="btn-remove-all">Remover Todos</button>
       </div>
     </div>
   );
