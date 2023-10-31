@@ -4,15 +4,15 @@ function InputText() {
   const [inputText, setInputText] = useState("");
 
   return (
-    <p>
+    <div className="input-text">
       <input
         type="text"
         onChange={(e) => {
-          e.target.value = "";
+          e.target.value;
         }}
       />
-      <button onClick={() => btnExcluir()}>Excluir</button>
-    </p>
+      <button onClick={() => btnExcluir()}>Add</button>
+    </div>
   );
 }
 
