@@ -1,22 +1,28 @@
 import { useState } from "react";
 import "./App.css";
 import Item from "./componentes/Item";
+import Icon from "./assets/tarefas.svg";
 
 function App() {
   const [inputText, setInputText] = useState("");
   const [lista, setLista] = useState([]);
 
-  function btnAdd() {
-    if (inputText == "") {
+  function addItem(form) {
+    form.preventDefault();
+    if (!inputText) {
+      console.log(lista);
       return;
     }
+    setLista([...lista, { text: inputText, isCompleted: false }]);
+    setInputText("");
+    document.querySelector(".input-text input").focus();
   }
 
   return (
     <div id="main">
       <h1 className="titulo">Lista de Tarefas</h1>
 
-      <form className="input-text">
+      <form onSubmit={addItem} className="input-text">
         <input
           value={inputText}
           onChange={(e) => {
@@ -25,12 +31,12 @@ function App() {
           type="text"
           placeholder="Adicione uma tarefa"
         />
-        <button onClick={() => btnAdd()}>Add</button>
+        <button>Add</button>
       </form>
 
       <div className="lista">
-        <Item />
-        <Item />
+        {lista.length < 1 ? <img src={Icon} /> : lista.map((item, index) => <Item texto={lista[index].text} />)}
+
         <button className="btn-remove-all">Remover Todos</button>
       </div>
     </div>

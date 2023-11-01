@@ -1,7 +1,7 @@
 function Item(props) {
   return (
     <div className="item">
-      <span>Tarefa Exemplo</span>
+      <span>{props.texto}</span>
       <button>Remover</button>
     </div>
   );
