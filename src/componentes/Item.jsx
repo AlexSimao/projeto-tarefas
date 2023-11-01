@@ -1,7 +1,18 @@
-function Item(props) {
+function Item({ item, index, lista, setLista }) {
+  function clicou(index) {
+    const listaAux = [...lista];
+    listaAux[index].isCompleted = !listaAux[index].isCompleted;
+    setLista(listaAux)
+  }
   return (
-    <div className="item">
-      <span>{props.texto}</span>
+    <div key={index} className={item.isCompleted ? "item completo" : "item"}>
+      <span
+        onClick={() => {
+          clicou(index);
+        }}
+      >
+        {item.text}
+      </span>
       <button>Remover</button>
     </div>
   );
