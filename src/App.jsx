@@ -35,7 +35,7 @@ function App() {
       </form>
 
       <div className="lista">
-        {lista.length < 1 ? <img src={Icon} /> : lista.map((item, index) => <Item setLista={setLista} lista={lista} index={index} item={item} />)}
+        {lista.length < 1 ? <img className="img-tarefas" src={Icon} /> : lista.map((item, index) => <Item setLista={setLista} lista={lista} index={index} item={item} />)}
 
         {lista.length > 0 ? <button className="btn-remove-all">Remover Todos</button> : ""}
       </div>

@@ -2,7 +2,7 @@ function Item({ item, index, lista, setLista }) {
   function clicou(index) {
     const listaAux = [...lista];
     listaAux[index].isCompleted = !listaAux[index].isCompleted;
-    setLista(listaAux)
+    setLista(listaAux);
   }
   return (
     <div key={index} className={item.isCompleted ? "item completo" : "item"}>
